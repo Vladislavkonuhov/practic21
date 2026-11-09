@@ -1,0 +1,44 @@
+﻿<Window x:Class="practic212.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:practic212"
+        mc:Ignorable="d"
+         Title="Анкета для опроса" Height="450" Width="500">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Имя:" Grid.Row="0" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtName" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+        <TextBlock Text="Возраст:" Grid.Row="1" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtAge" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+        <TextBlock Text="Пол:" Grid.Row="2" Grid.Column="0" Margin="5" VerticalAlignment="Top"/>
+        <StackPanel Grid.Row="2" Grid.Column="1" Margin="5" Orientation="Horizontal">
+            <RadioButton x:Name="rbMale" Content="Мужской" IsChecked="True" Margin="0,0,15,0"/>
+            <RadioButton x:Name="rbFemale" Content="Женский"/>
+        </StackPanel>
+
+        <TextBlock Text="Интересы:" Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Top"/>
+        <StackPanel Grid.Row="3" Grid.Column="1" Margin="5">
+            <CheckBox x:Name="cbSport" Content="Спорт" Margin="0,0,0,5"/>
+            <CheckBox x:Name="cbMusic" Content="Музыка" Margin="0,0,0,5"/>
+            <CheckBox x:Name="cbProg" Content="Программирование" Margin="0,0,0,5"/>
+        </StackPanel>
+
+
+        <Button Content="Отправить" Width="150" Margin="5" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Click="Send_Click"/>
+    </Grid>
+</Window>
